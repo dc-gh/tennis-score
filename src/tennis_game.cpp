@@ -24,6 +24,14 @@ std::string Tennis::getScore() const {
         return stringForScore(_player1Score) + "-All";
     }
 
+    if (_player1Score - _player2Score >= 2 && _player1Score > 4) {
+        return "Game Player 1";
+    }
+
+    if (_player1Score > 3) {
+        return "Advantage Player 1";
+    }
+
     return stringForScore(_player1Score) + "-" + stringForScore(_player2Score);
 }
 
