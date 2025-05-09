@@ -18,3 +18,19 @@ TEST(TennisGameTest, Player2ScoresScoreIsLoveFifteen) {
     game.wonPoint(PLAYER_2);
     EXPECT_EQ(game.getScore(), "Love-Fifteen");
 }
+
+
+TEST(TennisGameTest, BothPlayersScoreFifteen) {
+    Tennis game;
+    game.wonPoint(PLAYER_1);
+    game.wonPoint(PLAYER_2);
+    EXPECT_EQ(game.getScore(), "Fifteen-All");
+}
+
+TEST(TennisGameTest, Player1Scores2Player2Scores0ThirtyLove) {
+    Tennis game;
+    game.wonPoint(PLAYER_1);
+    game.wonPoint(PLAYER_1);
+    EXPECT_EQ(game.getScore(), "Thirty-Love");
+}
+
