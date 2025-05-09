@@ -1,23 +1,27 @@
 #include "tennis_game.h"
 #include <iostream>
 
+static std::string stringForScore(int score) {
+    switch(score) {
+        case 0:
+        return "Love";
+        case 1:
+        return "Fifteen";
+        case 2:
+        return "Thirty";
+        case 3:
+        return "Forty";
+        default:
+        return "THIS IS WRONG";
+    }
+}
+
 std::string Tennis::getScore() const {
     if (_player1Score == _player2Score) {
-        switch(_player1Score) {
-            case 0:
-                return "Love-All";
-            case 1:
-                return "Fifteen-All";
-        }
+        return stringForScore(_player1Score) + "-All";
     }
 
-    if (_player1Score > _player2Score) {
-        return "Fifteen-Love";
-    } else if( _player1Score < _player2Score) {
-        return "Love-Fifteen";
-    }
-
-    return "Love-All";
+    return stringForScore(_player1Score) + "-" + stringForScore(_player2Score);
 }
 
 void Tennis::wonPoint(Player player) {
