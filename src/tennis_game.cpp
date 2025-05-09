@@ -18,6 +18,9 @@ static std::string stringForScore(int score) {
 
 std::string Tennis::getScore() const {
     if (_player1Score == _player2Score) {
+        if (_player1Score >= 3) {
+            return "Deuce";
+        }
         return stringForScore(_player1Score) + "-All";
     }
 

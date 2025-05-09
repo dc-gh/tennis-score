@@ -65,7 +65,7 @@ TEST(TennisGameTest, Player1Scores0Player2Scores3LoveForty) {
 
 TEST(TennisGameTest, Player1Scores3Player2Scores3Deuce) {
     Tennis game;
-    setScore(game, 0, 3);
+    setScore(game, 3, 3);
     EXPECT_EQ(game.getScore(), "Deuce");
 }
 
