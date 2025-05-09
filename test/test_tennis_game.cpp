@@ -86,3 +86,15 @@ TEST(TennisGameTest, Player1Scores5Player2Scores3GamePlayer1) {
     setScore(game, 5, 3);
     EXPECT_EQ(game.getScore(), "Game Player 1");
 }
+
+TEST(TennisGameTest, Player1Scores3Player2Scores5GamePlayer2) {
+    Tennis game;
+    setScore(game, 3, 5);
+    EXPECT_EQ(game.getScore(), "Game Player 2");
+}
+
+TEST(TennisGameTest, Player1Scores4Player2Scores0GamePlayer1) {
+    Tennis game;
+    setScore(game, 4, 0);
+    EXPECT_EQ(game.getScore(), "Game Player 1");
+}

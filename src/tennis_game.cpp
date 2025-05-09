@@ -19,6 +19,7 @@ static std::string stringForScore(int score) {
 std::string Tennis::getScore() const {
     if (_player1Score <= 3 && _player2Score <= 3) {
         if (_player1Score == _player2Score) {
+            // TODO: Delete me.
             if (_player1Score == 3) {
                 return "Deuce";
             } else {
@@ -31,6 +32,10 @@ std::string Tennis::getScore() const {
 
     const int diff = _player1Score - _player2Score;
     switch (diff) {
+        case -2:
+        case -3:
+        case -4:
+            return "Game Player 2";
         case -1:
             return "Advantage Player 2";
         case 0:
@@ -38,6 +43,8 @@ std::string Tennis::getScore() const {
         case 1:
             return "Advantage Player 1";
         case 2:
+        case 3:
+        case 4:
             return "Game Player 1";
     }
 
