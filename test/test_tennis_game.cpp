@@ -75,7 +75,7 @@ TEST(TennisGameTest, Player1Scores4Player2Scores3AdvantagePlayer1) {
     EXPECT_EQ(game.getScore(), "Advantage Player 1");
 }
 
-TEST(TennisGameTest, Player1Scores3Player2Scores3AdvantagePlayer1) {
+TEST(TennisGameTest, Player1Scores3Player2Scores4AdvantagePlayer2) {
     Tennis game;
     setScore(game, 3, 4);
     EXPECT_EQ(game.getScore(), "Advantage Player 2");
